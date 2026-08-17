@@ -1,0 +1,4 @@
+BioSample,Scientific name,Antibiotic,Resistance phenotype,MIC (mg/L),Testing standard
+SAMN10000001,Escherichia coli,Ampicillin,Resistant,32,CLSI
+SAMN10000002,Escherichia coli,Ampicillin,Susceptible,2,CLSI
+SAMN10000003,Escherichia coli,Ciprofloxacin,Intermediate,1,CLSI
