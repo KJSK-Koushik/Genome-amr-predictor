@@ -60,6 +60,10 @@ python -m genome_amr_predictor audit-file `
   --output-dir reports/local-file-audit
 ```
 
+File audits apply the species configured in `phase1_audit.json`, recognize the AST Browser's
+`#BioSample` header, repair a known doubled-quote export defect, and record the source file's
+SHA-256 fingerprint. Raw downloaded datasets remain ignored by Git.
+
 ## Repository layout
 
 ```text

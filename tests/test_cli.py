@@ -43,3 +43,6 @@ def test_audit_file_cli(tmp_path):
     assert (output_dir / "audit_report.md").is_file()
     summary = json.loads((output_dir / "audit_summary.json").read_text(encoding="utf-8"))
     assert summary["ast_records"] == 3
+    manifest = json.loads((output_dir / "data_manifest.json").read_text(encoding="utf-8"))
+    assert manifest["species_filter"] == "Escherichia coli"
+    assert len(manifest["source_file_sha256"]) == 64

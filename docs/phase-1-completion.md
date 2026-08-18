@@ -55,3 +55,18 @@ for auditing but excluded from the first binary endpoint.
 - `configs/phase1_audit.json` contains the versioned thresholds and candidate list.
 
 Phase 2 requires explicit approval before implementation begins.
+
+## Downloaded AST export confirmation
+
+On 2026-08-18, the user-provided `asts.zip` archive was inspected and audited. The archive contains
+a 114 MB, multi-species NCBI AST Browser export rather than genome sequence files. It contains
+494,991 AST rows from 52 organism groups. Applying the configured *Escherichia coli* filter produced
+169,274 rows from 10,797 BioSamples and 93 antibiotics.
+
+The downloaded data independently confirms the same Phase 2 shortlist and the decision to defer
+meropenem. The extracted CSV SHA-256 is
+`f9fa051f3fda97420c75d56dfac23784abcb4a8858b63d7f3ece25716b90326e`; the ZIP SHA-256 is
+`5e21e37a01227840b639648777633bb44f3a8e6a0477bd3d4955fc6cac174c9c`.
+
+The raw archive and CSV are not committed. Only the compact audit evidence under
+`reports/phase1/2026-08-18-downloaded/` is versioned.

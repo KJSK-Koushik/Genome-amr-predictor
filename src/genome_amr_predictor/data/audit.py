@@ -222,6 +222,19 @@ def render_markdown_report(bundle: AuditBundle, manifest: dict[str, Any]) -> str
     )
     retained = ", ".join(summary["candidate_antibiotics_retained"]) or "None"
     deferred = ", ".join(summary["candidate_antibiotics_deferred"]) or "None"
+    if manifest["query"] == "file import":
+        sample_scope = "Unique BioSamples after the configured species filter"
+        reproducibility_note = (
+            "The manifest records the source filename and SHA-256 fingerprint, configuration hash, "
+            "retrieval time, and processed counts. The raw dataset remains outside version control."
+        )
+    else:
+        sample_scope = "NCBI matching BioSamples at retrieval"
+        reproducibility_note = (
+            "The manifest records source URLs, query translation, configuration hash, "
+            "retrieval time, and processed counts. Raw XML was parsed in batches and was "
+            "not retained."
+        )
     return f"""# Phase 1 NCBI AST Data Audit
 
 Generated: {summary["generated_at_utc"]}
@@ -230,7 +243,7 @@ Generated: {summary["generated_at_utc"]}
 
 - Species: *{summary["species"]}*
 - Query: `{manifest["query"]}`
-- NCBI matching BioSamples at retrieval: {manifest["ncbi_reported_biosamples"]:,}
+- {sample_scope}: {manifest["ncbi_reported_biosamples"]:,}
 - BioSamples processed: {manifest["processed_biosamples"]:,}
 - AST rows parsed: {summary["ast_records"]:,}
 - Unique antibiotics observed: {summary["unique_antibiotics"]:,}
@@ -274,8 +287,7 @@ and genome quality before a final training cohort is frozen.
 
 ## Reproducibility
 
-See `data_manifest.json` for source URLs, query translation, configuration hash, retrieval time,
-and processed counts. Raw XML was parsed in batches and was not retained.
+{reproducibility_note}
 """
 
 

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import re
 from pathlib import Path
 
 from genome_amr_predictor.data.labels import normalize_antibiotic, normalize_phenotype
@@ -32,9 +33,26 @@ ALIASES = {
     "testing_standard": ("testing_standard", "testing standard"),
 }
 
+MALFORMED_QUOTED_FIELD = re.compile(r',""([^"\r\n]*)"",')
+
 
 def _normalized_key(value: str) -> str:
-    return value.strip().lower().replace("-", "_")
+    return value.strip().lower().lstrip("#").replace("-", "_")
+
+
+def _repair_export_quoting(line: str) -> str:
+    """Repair doubled outer quotes observed in some NCBI AST Browser rows."""
+    return MALFORMED_QUOTED_FIELD.sub(lambda match: f',"{match.group(1)}",', line)
+
+
+def _matches_species(organism: str, species: str | None) -> bool:
+    if not species:
+        return True
+    normalized_organism = " ".join(organism.casefold().split())
+    normalized_species = " ".join(species.casefold().split())
+    return normalized_organism == normalized_species or normalized_organism.startswith(
+        f"{normalized_species} "
+    )
 
 
 def _get(row: dict[str, str], field: str) -> str:
@@ -53,14 +71,22 @@ def _detect_delimiter(path: Path) -> str:
     return csv.Sniffer().sniff(sample, delimiters=",\t").delimiter
 
 
-def read_ast_file(path: Path) -> list[ASTRecord]:
+def read_ast_file(path: Path, *, species: str | None = None) -> list[ASTRecord]:
     delimiter = _detect_delimiter(path)
     records: list[ASTRecord] = []
     with path.open("r", encoding="utf-8-sig", newline="") as stream:
-        reader = csv.DictReader(stream, delimiter=delimiter)
+        reader = csv.DictReader(
+            (_repair_export_quoting(line) for line in stream),
+            delimiter=delimiter,
+        )
         if not reader.fieldnames:
             raise ValueError("AST input file has no header row")
         for row in reader:
+            if None in row:
+                raise ValueError(f"Malformed AST row at line {reader.line_num}")
+            organism = _get(row, "organism")
+            if not _matches_species(organism, species):
+                continue
             antibiotic = normalize_antibiotic(_get(row, "antibiotic"))
             phenotype_raw = _get(row, "phenotype_raw")
             if not antibiotic or not phenotype_raw:
@@ -69,7 +95,7 @@ def read_ast_file(path: Path) -> list[ASTRecord]:
             records.append(
                 ASTRecord(
                     biosample_accession=_get(row, "biosample_accession"),
-                    organism=_get(row, "organism"),
+                    organism=organism,
                     taxonomy_id=_get(row, "taxonomy_id"),
                     bioproject_accession=_get(row, "bioproject_accession"),
                     sra_accession=_get(row, "sra_accession"),

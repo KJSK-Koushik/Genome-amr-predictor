@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import sys
 from datetime import UTC, datetime
@@ -25,6 +26,14 @@ def _positive_or_zero(value: str) -> int:
     if parsed < 0:
         raise argparse.ArgumentTypeError("value must be zero or positive")
     return parsed
+
+
+def _sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -135,10 +144,12 @@ def audit_file(args: argparse.Namespace) -> int:
     input_path = args.input.resolve()
     if not input_path.is_file():
         raise FileNotFoundError(f"AST input file not found: {input_path}")
-    records = read_ast_file(input_path)
+    records = read_ast_file(input_path, species=config.species)
     manifest: dict[str, object] = {
         "source": "User-provided AST Browser-compatible file",
-        "source_file": str(input_path),
+        "source_file": input_path.name,
+        "source_file_sha256": _sha256(input_path),
+        "species_filter": config.species,
         "retrieved_at_utc": datetime.now(UTC).isoformat(),
         "query": "file import",
         "translated_query": "file import",
