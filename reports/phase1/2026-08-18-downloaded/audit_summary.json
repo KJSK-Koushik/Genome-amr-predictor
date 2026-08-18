@@ -1,0 +1,23 @@
+{
+  "ast_records": 169274,
+  "binary_records": 130101,
+  "candidate_antibiotics_deferred": [
+    "meropenem"
+  ],
+  "candidate_antibiotics_retained": [
+    "ampicillin",
+    "ceftriaxone",
+    "ciprofloxacin",
+    "gentamicin",
+    "tetracycline",
+    "trimethoprim-sulfamethoxazole",
+    "cefepime"
+  ],
+  "conflicting_binary_label_pairs": 6,
+  "duplicate_isolate_antibiotic_pairs": 52,
+  "excluded_from_binary": 39173,
+  "generated_at_utc": "2026-08-18T04:42:03.399090+00:00",
+  "species": "Escherichia coli",
+  "unique_antibiotics": 93,
+  "unique_biosamples": 10797
+}

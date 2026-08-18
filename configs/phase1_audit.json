@@ -1,0 +1,21 @@
+{
+  "species": "Escherichia coli",
+  "entrez_query": "Escherichia coli[Organism] AND antibiogram[filter]",
+  "candidate_antibiotics": [
+    "ampicillin",
+    "ceftriaxone",
+    "ciprofloxacin",
+    "gentamicin",
+    "tetracycline",
+    "trimethoprim-sulfamethoxazole",
+    "cefepime",
+    "meropenem"
+  ],
+  "selection_thresholds": {
+    "minimum_binary_records": 500,
+    "minimum_resistant_records": 100,
+    "minimum_susceptible_records": 100,
+    "minimum_minority_fraction": 0.1
+  },
+  "batch_size": 200
+}

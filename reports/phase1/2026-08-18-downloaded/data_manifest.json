@@ -1,0 +1,37 @@
+{
+  "config": {
+    "batch_size": 200,
+    "candidate_antibiotics": [
+      "ampicillin",
+      "ceftriaxone",
+      "ciprofloxacin",
+      "gentamicin",
+      "tetracycline",
+      "trimethoprim-sulfamethoxazole",
+      "cefepime",
+      "meropenem"
+    ],
+    "entrez_query": "Escherichia coli[Organism] AND antibiogram[filter]",
+    "selection_thresholds": {
+      "minimum_binary_records": 500,
+      "minimum_minority_fraction": 0.1,
+      "minimum_resistant_records": 100,
+      "minimum_susceptible_records": 100
+    },
+    "species": "Escherichia coli"
+  },
+  "config_sha256": "a165fd8315245dd79d06680b7e1a3cddda22f4b9fc997ae3411709b7b5fe869a",
+  "ncbi_reported_biosamples": 10797,
+  "package_version": "0.1.0",
+  "parsed_ast_rows": 169274,
+  "processed_biosamples": 10797,
+  "query": "file import",
+  "raw_xml_retained": false,
+  "requested_biosamples": 10797,
+  "retrieved_at_utc": "2026-08-18T04:42:02.363364+00:00",
+  "source": "User-provided AST Browser-compatible file",
+  "source_file": "asts.csv",
+  "source_file_sha256": "f9fa051f3fda97420c75d56dfac23784abcb4a8858b63d7f3ece25716b90326e",
+  "species_filter": "Escherichia coli",
+  "translated_query": "file import"
+}
