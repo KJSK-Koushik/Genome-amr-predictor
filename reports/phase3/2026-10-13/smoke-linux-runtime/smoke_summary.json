@@ -1,0 +1,69 @@
+{
+  "status": "passed",
+  "assembly_table_sha256": "0bb5c0df98d7f1fde88a771359108974bafeff2c97434fd9e4a96f074bd4bed7",
+  "purpose": "Integration smoke test; no phenotype performance claims",
+  "results": [
+    {
+      "biosample_accession": "SAMN03075588",
+      "assembly_accession": "GCF_000770275.1",
+      "split": "train",
+      "status": "completed",
+      "summary": {
+        "amr_hits": 17,
+        "methods": {
+          "ALLELEX": 2,
+          "EXACTX": 9,
+          "POINTX": 7
+        },
+        "mutation_hits": 7,
+        "total_hits": 18
+      },
+      "evidence_sha256": "77324b7951954ec499e9c4ebd4e068338789d53635af2580f7c072282a238e9e",
+      "run_manifest_sha256": "f71094a2ab0e8b2c71806de89cfbdea8681e4cad2973ca8c0515f3fff814466f",
+      "software_version": "4.2.7",
+      "database_version_report": "Software directory: '/opt/genome-amr/amrfinderplus/4.2.7/'\nSoftware version: 4.2.7\nDatabase directory: '/opt/genome-amr/amrfinderplus/4.2.7/data/2026-08-07.1'\nDatabase version: 2026-08-07.1\nRunning: /opt/genome-amr/amrfinderplus/4.2.7/amrfinder -d /opt/genome-amr/amrfinderplus/4.2.7/data/2026-08-07.1 -V\namrfinder took 0 seconds to complete"
+    },
+    {
+      "biosample_accession": "SAMN03177615",
+      "assembly_accession": "GCF_000819375.1",
+      "split": "validation",
+      "status": "completed",
+      "summary": {
+        "amr_hits": 6,
+        "methods": {
+          "ALLELEX": 1,
+          "BLASTX": 1,
+          "EXACTX": 4
+        },
+        "mutation_hits": 0,
+        "total_hits": 6
+      },
+      "evidence_sha256": "31af1213914c3ee99b2a1cd461fc69734786a823a8074a72493ff6fcdc02c957",
+      "run_manifest_sha256": "e3b3b01640b5368e0e30091b94e25eb5aa00a4f18a625f8eea79f6b9cbdeef45",
+      "software_version": "4.2.7",
+      "database_version_report": "Software directory: '/opt/genome-amr/amrfinderplus/4.2.7/'\nSoftware version: 4.2.7\nDatabase directory: '/opt/genome-amr/amrfinderplus/4.2.7/data/2026-08-07.1'\nDatabase version: 2026-08-07.1\nRunning: /opt/genome-amr/amrfinderplus/4.2.7/amrfinder -d /opt/genome-amr/amrfinderplus/4.2.7/data/2026-08-07.1 -V\namrfinder took 0 seconds to complete"
+    },
+    {
+      "biosample_accession": "SAMN11638310",
+      "assembly_accession": "GCA_014625455.1",
+      "split": "test",
+      "status": "completed",
+      "summary": {
+        "amr_hits": 35,
+        "methods": {
+          "ALLELEX": 12,
+          "EXACTX": 16,
+          "PARTIALX": 1,
+          "PARTIAL_CONTIG_ENDX": 1,
+          "POINTX": 7
+        },
+        "mutation_hits": 7,
+        "total_hits": 37
+      },
+      "evidence_sha256": "5188152cdde4ae1ea455fba73954c9e328b8ad9d1442cd25846269f15f503638",
+      "run_manifest_sha256": "eab5a87a21b70409130f602e07c77e5d2878dda328c01d626187cb0832a2a55a",
+      "software_version": "4.2.7",
+      "database_version_report": "Software directory: '/opt/genome-amr/amrfinderplus/4.2.7/'\nSoftware version: 4.2.7\nDatabase directory: '/opt/genome-amr/amrfinderplus/4.2.7/data/2026-08-07.1'\nDatabase version: 2026-08-07.1\nRunning: /opt/genome-amr/amrfinderplus/4.2.7/amrfinder -d /opt/genome-amr/amrfinderplus/4.2.7/data/2026-08-07.1 -V\namrfinder took 0 seconds to complete"
+    }
+  ]
+}

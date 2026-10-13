@@ -1,0 +1,42 @@
+{
+  "ast_metadata_counts": {
+    "laboratory_method": {
+      "not_reported": 47485
+    },
+    "laboratory_platform": {
+      "Etest": 3,
+      "KB panel": 6,
+      "Microscan": 5,
+      "Phoenix": 14478,
+      "Phoenix NMIC-203 card": 7,
+      "Scan 500": 13,
+      "Sensititer": 1071,
+      "Sensititre": 24975,
+      "Sensititre microbroth dilution using EUVSEC and EUVSEC2 plates": 5,
+      "Vitek": 4818,
+      "not_reported": 2104
+    },
+    "testing_standard": {
+      "CLSI": 44804,
+      "EUCAST": 2561,
+      "SFM": 96,
+      "not_reported": 24
+    }
+  },
+  "conflicting_duplicate_endpoints_excluded": 0,
+  "duplicate_sequence_label_conflicts": 0,
+  "exact_duplicate_sequence_groups": 0,
+  "exclusion_reasons": {},
+  "final_cohort_rows": 47485,
+  "final_unique_genomes": 7911,
+  "generated_at_utc": "2026-10-12T18:24:28.340827+00:00",
+  "metadata_qc_assemblies": 7911,
+  "sequence_files_reverified": true,
+  "sequence_qc_applied": true,
+  "split_biosamples": {
+    "test": 1570,
+    "train": 5592,
+    "validation": 749
+  },
+  "verified_genomes": 7911
+}

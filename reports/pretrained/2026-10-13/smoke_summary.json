@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "samples": [
+    {
+      "sample": "SAMN03075588",
+      "assembly": "GCF_000770275.1",
+      "seconds": 1.91,
+      "input_hash_verified": true,
+      "predicted": 5,
+      "unsupported": 2
+    },
+    {
+      "sample": "SAMN03177615",
+      "assembly": "GCF_000819375.1",
+      "seconds": 1.97,
+      "input_hash_verified": true,
+      "predicted": 5,
+      "unsupported": 2
+    },
+    {
+      "sample": "SAMN11638310",
+      "assembly": "GCA_014625455.1",
+      "seconds": 2.256,
+      "input_hash_verified": true,
+      "predicted": 5,
+      "unsupported": 2
+    }
+  ],
+  "accuracy_evaluation": false
+}

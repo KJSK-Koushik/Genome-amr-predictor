@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "native_reference_tests": 4,
+  "software_version": "4.2.7",
+  "database_version": "2026-08-07.1",
+  "threads": 1,
+  "command": "bash test_amrfinder_serial.sh -n",
+  "modification": "Upstream test script with only --threads 6 changed to --threads 1",
+  "log_sha256": "34a5e3abb5ede80a46420a16f45574db8b94729d6ce30151480f62c81a85afe3"
+}

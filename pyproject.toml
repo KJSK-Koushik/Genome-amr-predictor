@@ -1,0 +1,62 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "genome-amr-predictor"
+version = "0.1.0"
+description = "Research pipeline for bacterial AMR gene detection and phenotype prediction."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "All rights reserved" }
+authors = [
+  { name = "Genome AMR Predictor Project Team" },
+]
+keywords = ["antimicrobial-resistance", "bioinformatics", "bacterial-genomics", "machine-learning"]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = []
+
+[project.optional-dependencies]
+ml = [
+  "scikit-learn>=1.6,<2",
+  "scipy>=1.13,<2",
+  "joblib>=1.4,<2",
+]
+ui = [
+  "streamlit>=1.50,<2",
+  "fpdf2>=2.8,<3",
+]
+dev = [
+  "pytest>=8.3,<9",
+  "pytest-cov>=6,<7",
+  "ruff>=0.11,<1",
+]
+
+[project.scripts]
+genome-amr = "genome_amr_predictor.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/genome_amr_predictor"]
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-markers --strict-config"
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "RUF"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"

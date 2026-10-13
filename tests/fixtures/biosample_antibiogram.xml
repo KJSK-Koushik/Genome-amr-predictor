@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<BioSampleSet>
+  <BioSample accession="SAMN00000001">
+    <Ids>
+      <Id db="BioSample" is_primary="1">SAMN00000001</Id>
+      <Id db="SRA">SRS00000001</Id>
+    </Ids>
+    <Description>
+      <Organism taxonomy_id="562" taxonomy_name="Escherichia coli" />
+      <Comment>
+        <Table class="Antibiogram.1.0">
+          <Header>
+            <Cell>Antibiotic</Cell>
+            <Cell>Resistance phenotype</Cell>
+            <Cell>Measurement sign</Cell>
+            <Cell>Measurement</Cell>
+            <Cell>Measurement units</Cell>
+            <Cell>Laboratory typing method</Cell>
+            <Cell>Laboratory typing platform</Cell>
+            <Cell>Vendor</Cell>
+            <Cell>Laboratory typing method version or reagent</Cell>
+            <Cell>Testing standard</Cell>
+          </Header>
+          <Body>
+            <Row>
+              <Cell>Ampicillin</Cell><Cell>resistant</Cell><Cell>&gt;</Cell><Cell>32</Cell>
+              <Cell>mg/L</Cell><Cell>MIC</Cell><Cell>Sensititre</Cell><Cell>Trek</Cell>
+              <Cell>96-Well Plate</Cell><Cell>CLSI</Cell>
+            </Row>
+            <Row>
+              <Cell>Ciprofloxacin</Cell><Cell>susceptible</Cell><Cell>==</Cell><Cell>0.03</Cell>
+              <Cell>mg/L</Cell><Cell>MIC</Cell><Cell>Sensititre</Cell><Cell>Trek</Cell>
+              <Cell>96-Well Plate</Cell><Cell>CLSI</Cell>
+            </Row>
+            <Row>
+              <Cell>Gentamicin</Cell><Cell>intermediate</Cell><Cell>==</Cell><Cell>8</Cell>
+              <Cell>mg/L</Cell><Cell>MIC</Cell><Cell>Sensititre</Cell><Cell>Trek</Cell>
+              <Cell>96-Well Plate</Cell><Cell>CLSI</Cell>
+            </Row>
+          </Body>
+        </Table>
+      </Comment>
+    </Description>
+    <Attributes>
+      <Attribute attribute_name="isolate" harmonized_name="isolate">EC-001</Attribute>
+      <Attribute attribute_name="collection_date" harmonized_name="collection_date">2025</Attribute>
+      <Attribute attribute_name="geo_loc_name" harmonized_name="geo_loc_name">India</Attribute>
+      <Attribute attribute_name="isolation_source" harmonized_name="isolation_source">blood</Attribute>
+      <Attribute attribute_name="host" harmonized_name="host">Homo sapiens</Attribute>
+    </Attributes>
+    <Links><Link type="entrez" target="bioproject" label="PRJNA000001">1</Link></Links>
+  </BioSample>
+  <BioSample accession="SAMN00000002">
+    <Ids><Id db="BioSample" is_primary="1">SAMN00000002</Id></Ids>
+    <Description>
+      <Organism taxonomy_id="562" taxonomy_name="Escherichia coli" />
+      <Comment>
+        <Table class="Antibiogram.1.0">
+          <Header><Cell>Antibiotic</Cell><Cell>Resistance phenotype</Cell></Header>
+          <Body>
+            <Row><Cell>Ampicillin</Cell><Cell>susceptible</Cell></Row>
+            <Row><Cell>Ciprofloxacin</Cell><Cell>resistant</Cell></Row>
+            <Row><Cell>Meropenem</Cell><Cell>not defined</Cell></Row>
+          </Body>
+        </Table>
+      </Comment>
+    </Description>
+    <Attributes><Attribute attribute_name="isolate">EC-002</Attribute></Attributes>
+  </BioSample>
+</BioSampleSet>

@@ -1,0 +1,14 @@
+field,missing_records,total_records,missing_percent
+biosample_accession,0,169274,0.0
+organism,0,169274,0.0
+bioproject_accession,169274,169274,100.0
+sra_accession,169274,169274,100.0
+isolate,0,169274,0.0
+collection_date,169274,169274,100.0
+geo_loc_name,2544,169274,1.5
+isolation_source,3255,169274,1.92
+host,169274,169274,100.0
+measurement,0,169274,0.0
+laboratory_method,169274,169274,100.0
+laboratory_platform,17244,169274,10.19
+testing_standard,2894,169274,1.71

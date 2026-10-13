@@ -1,0 +1,245 @@
+{
+  "cohort_provenance": {
+    "assembly_cache_file": "full_assemblies.jsonl",
+    "assembly_cache_sha256": "87c75a79522e09071522606e072441a3a8a1dffcb0be1f6d1be9f22754f51c5e",
+    "cohort_summary": {
+      "biosamples_passing_metadata_qc": 7911,
+      "biosamples_with_binary_labels": 8273,
+      "biosamples_with_selected_assemblies": 7931,
+      "conflicting_label_pairs_removed": 1,
+      "duplicate_label_rows_removed": 29,
+      "exclusion_reasons": {
+        "contig_n50_too_low": 2,
+        "no_assembly": 342,
+        "too_many_contigs": 20
+      },
+      "frozen_cohort_rows": 47485,
+      "generated_at_utc": "2026-08-18T06:21:44.570654+00:00",
+      "group_count": 46,
+      "largest_groups": [
+        {
+          "biosamples": 2638,
+          "group_id": "PRJNA292663"
+        },
+        {
+          "biosamples": 2075,
+          "group_id": "PRJNA809394"
+        },
+        {
+          "biosamples": 1545,
+          "group_id": "PRJNA514245"
+        },
+        {
+          "biosamples": 508,
+          "group_id": "PRJNA278886"
+        },
+        {
+          "biosamples": 335,
+          "group_id": "PRJNA885502"
+        }
+      ],
+      "normalized_binary_labels": 49702,
+      "rows_without_biosample_removed": 0,
+      "species": "Escherichia coli",
+      "split_actual_fractions": {
+        "test": 0.198458,
+        "train": 0.706864,
+        "validation": 0.094678
+      },
+      "split_biosamples": {
+        "test": 1570,
+        "train": 5592,
+        "validation": 749
+      },
+      "split_target_fractions": {
+        "test": 0.15,
+        "train": 0.7,
+        "validation": 0.15
+      }
+    },
+    "config": {
+      "antibiotics": [
+        "ampicillin",
+        "ceftriaxone",
+        "ciprofloxacin",
+        "gentamicin",
+        "tetracycline",
+        "trimethoprim-sulfamethoxazole",
+        "cefepime"
+      ],
+      "assembly_qc": {
+        "maximum_checkm_contamination": 5.0,
+        "maximum_contigs": 500,
+        "maximum_length": 6500000,
+        "minimum_checkm_completeness": 95.0,
+        "minimum_contig_n50": 20000,
+        "minimum_length": 4000000,
+        "reject_ani_mismatch": true,
+        "require_checkm": false
+      },
+      "assembly_request_batch_size": 50,
+      "species": "Escherichia coli",
+      "splits": {
+        "seed": "genome-amr-phase2-v1",
+        "test_fraction": 0.15,
+        "train_fraction": 0.7,
+        "validation_fraction": 0.15
+      }
+    },
+    "config_sha256": "c31acd58b000896cf08c88a84fb3f3a590e8827e5806479dd9950662a138eae7",
+    "ncbi_datasets_api": "https://api.ncbi.nlm.nih.gov/datasets/v2",
+    "package_version": "0.1.0",
+    "requested_biosamples": 8273,
+    "retrieved_at_utc": "2026-08-18T06:21:44.982744+00:00",
+    "source": "User-provided NCBI AST Browser export joined to NCBI Datasets assemblies",
+    "source_file": "asts.csv",
+    "source_file_sha256": "f9fa051f3fda97420c75d56dfac23784abcb4a8858b63d7f3ece25716b90326e",
+    "source_urls": [
+      "https://www.ncbi.nlm.nih.gov/datasets/docs/v2/",
+      "https://api.ncbi.nlm.nih.gov/datasets/v2"
+    ]
+  },
+  "config": {
+    "antibiotics": [
+      "ampicillin",
+      "ceftriaxone",
+      "ciprofloxacin",
+      "gentamicin",
+      "tetracycline",
+      "trimethoprim-sulfamethoxazole",
+      "cefepime"
+    ],
+    "assembly_qc": {
+      "maximum_checkm_contamination": 5.0,
+      "maximum_contigs": 500,
+      "maximum_length": 6500000,
+      "minimum_checkm_completeness": 95.0,
+      "minimum_contig_n50": 20000,
+      "minimum_length": 4000000,
+      "reject_ani_mismatch": true,
+      "require_checkm": false
+    },
+    "assembly_request_batch_size": 50,
+    "species": "Escherichia coli",
+    "splits": {
+      "seed": "genome-amr-phase2-v1",
+      "test_fraction": 0.15,
+      "train_fraction": 0.7,
+      "validation_fraction": 0.15
+    }
+  },
+  "config_sha256": "c31acd58b000896cf08c88a84fb3f3a590e8827e5806479dd9950662a138eae7",
+  "download_provenance": {
+    "accession_file": "assembly_accessions.txt",
+    "accession_file_sha256": "9e279d80277ba0267888321673df7374d48ea1bbad8df8e59a2ae3e336331b07",
+    "accessions_listed": 7911,
+    "generated_at_utc": "2026-10-12T18:09:19.750535+00:00",
+    "genomes_reported": 7911,
+    "genomes_verified": 7911,
+    "max_workers": 10,
+    "ncbi_datasets_version": "datasets version: 18.35.0",
+    "package_version": "0.1.0",
+    "sequence_transport": "ncbi-datasets-rehydrate",
+    "shard_size": 250
+  },
+  "generated_at_utc": "2026-10-12T18:24:31.564579+00:00",
+  "inputs": {
+    "assemblies": {
+      "name": "assemblies.csv",
+      "sha256": "a974ee2765f523922e650ff4e9c3dda5ead918663a05ae80f67ce42ef8dcb96f"
+    },
+    "cohort": {
+      "name": "cohort.csv",
+      "sha256": "46ad728dd9d5955db229f61ae4555c884412502e4384930375cfd702be5b14ab"
+    },
+    "genome_manifest": {
+      "name": "genome_manifest.csv",
+      "sha256": "b48242cc14bce4ce3e6aab1ad135a086f22084cbfed5b6c92f6d7b43049ac57c"
+    }
+  },
+  "outputs": {
+    "duplicate_sequence_label_conflicts.csv": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "final_assemblies.csv": {
+      "sha256": "0bb5c0df98d7f1fde88a771359108974bafeff2c97434fd9e4a96f074bd4bed7"
+    },
+    "final_cohort.csv": {
+      "sha256": "05a6c77d12ea66f9811d2fb7337e5a27cd51cc4aa4ab6dc7a62f6f5ef7db8199"
+    },
+    "final_report.md": {
+      "sha256": "8345a283a8de8d08cbf194d4ce2ce1ff13008248c1d4c5881d83b434522387e5"
+    },
+    "final_summary.json": {
+      "sha256": "65acfed2532021956f0bc77e89473ae7ad583f1aa66f19a5a6411260916984ed"
+    },
+    "genome_exclusions.csv": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "split_summary.csv": {
+      "sha256": "812eedbbb5878aaad2ba9406b1cee327cb2b27e41c7ad594bc0804793dc79e79"
+    }
+  },
+  "package_version": "0.1.0",
+  "python_version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "source_code_sha256": {
+    "__init__.py": "c70b9bb0a08522d3cd062f031a0903f036eae44c276ab1b6f8c6d5e09ef1b61f",
+    "__main__.py": "40809682f99f7b36c51334e0db50b3549274fd40eb5c2b543afa1dd763659eb8",
+    "cli.py": "ae90d831ae4c01309f96683f2d5bcf16897a404c9ea94089fd85d7f7984b77a8",
+    "cohort_config.py": "575d449685903575a16f9ae5b274ce71a3da38594f9c093e15c27598231b8326",
+    "config.py": "db826bdbc3fac32c83d3f1e169ebee989bf8cb6043b8d8b95c73aec8ca07eab9",
+    "data/__init__.py": "0f3d155e4466066b09cb462ecf1d7a4708c282c59d2138a90012914925eb7936",
+    "data/audit.py": "69db772aa7104c9bebeb41331b15ec772ed4b236713d89594733d26a7ca6194a",
+    "data/cohort.py": "b571f995eb817ec2ffccf4671f6f578bbfffb716c17b56072ce8c92fe53358a7",
+    "data/fasta.py": "f26d921a4f5f1001adb4fa7acfe13c2e38170d06d60aab4ac66c34d29b0dca4e",
+    "data/file_import.py": "b799ce2ecd2d9b10e89d0bedbecb087471018c224273613e14a76cbf92659782",
+    "data/finalize.py": "4b9679a6a25fe6a53662cb526815a687a401932983fe9462461215358378d7f0",
+    "data/genome_download.py": "cc59e436d25f698391348cdb77f8f124fa2fdbcea8db8c8ce8b2245c2b623b6f",
+    "data/labels.py": "6f2fb8a4b646b5277f70b0c94510395ec49f3d543784546f2c0255541fd1a3e3",
+    "data/ncbi_biosample.py": "e05a22a157f5413e3bb4af454f04f74b1296256ff9ab553c70f3bc23ee61be48",
+    "data/ncbi_datasets.py": "360beb1a3f1ea07ddb80c0596e886a3219b2b019e40d20dee15b8ccb135f406c",
+    "data/schema.py": "b612abe74566b0f7f1b7e61e40bac3a7874437452caf88f127a798c5117a85d5"
+  },
+  "summary": {
+    "ast_metadata_counts": {
+      "laboratory_method": {
+        "not_reported": 47485
+      },
+      "laboratory_platform": {
+        "Etest": 3,
+        "KB panel": 6,
+        "Microscan": 5,
+        "Phoenix": 14478,
+        "Phoenix NMIC-203 card": 7,
+        "Scan 500": 13,
+        "Sensititer": 1071,
+        "Sensititre": 24975,
+        "Sensititre microbroth dilution using EUVSEC and EUVSEC2 plates": 5,
+        "Vitek": 4818,
+        "not_reported": 2104
+      },
+      "testing_standard": {
+        "CLSI": 44804,
+        "EUCAST": 2561,
+        "SFM": 96,
+        "not_reported": 24
+      }
+    },
+    "conflicting_duplicate_endpoints_excluded": 0,
+    "duplicate_sequence_label_conflicts": 0,
+    "exact_duplicate_sequence_groups": 0,
+    "exclusion_reasons": {},
+    "final_cohort_rows": 47485,
+    "final_unique_genomes": 7911,
+    "generated_at_utc": "2026-10-12T18:24:28.340827+00:00",
+    "metadata_qc_assemblies": 7911,
+    "sequence_files_reverified": true,
+    "sequence_qc_applied": true,
+    "split_biosamples": {
+      "test": 1570,
+      "train": 5592,
+      "validation": 749
+    },
+    "verified_genomes": 7911
+  }
+}

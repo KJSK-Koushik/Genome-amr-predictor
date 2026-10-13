@@ -1,0 +1,39 @@
+{
+  "config": {
+    "batch_size": 200,
+    "candidate_antibiotics": [
+      "ampicillin",
+      "ceftriaxone",
+      "ciprofloxacin",
+      "gentamicin",
+      "tetracycline",
+      "trimethoprim-sulfamethoxazole",
+      "cefepime",
+      "meropenem"
+    ],
+    "entrez_query": "Escherichia coli[Organism] AND antibiogram[filter]",
+    "selection_thresholds": {
+      "minimum_binary_records": 500,
+      "minimum_minority_fraction": 0.1,
+      "minimum_resistant_records": 100,
+      "minimum_susceptible_records": 100
+    },
+    "species": "Escherichia coli"
+  },
+  "config_sha256": "a165fd8315245dd79d06680b7e1a3cddda22f4b9fc997ae3411709b7b5fe869a",
+  "ncbi_reported_biosamples": 11075,
+  "package_version": "0.1.0",
+  "parsed_ast_rows": 171471,
+  "processed_biosamples": 11075,
+  "query": "Escherichia coli[Organism] AND antibiogram[filter]",
+  "raw_xml_retained": false,
+  "requested_biosamples": 11075,
+  "retrieved_at_utc": "2026-08-17T17:05:28.362831+00:00",
+  "source": "NCBI BioSample structured antibiograms",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/biosample/",
+    "https://www.ncbi.nlm.nih.gov/pathogens/docs/ast/",
+    "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
+  ],
+  "translated_query": "\"Escherichia coli\"[Organism] AND antibiogram[filter]"
+}

@@ -1,0 +1,69 @@
+{
+  "status": "passed",
+  "assembly_table_sha256": "0bb5c0df98d7f1fde88a771359108974bafeff2c97434fd9e4a96f074bd4bed7",
+  "purpose": "Integration smoke test; no phenotype performance claims",
+  "results": [
+    {
+      "biosample_accession": "SAMN03075588",
+      "assembly_accession": "GCF_000770275.1",
+      "split": "train",
+      "status": "completed",
+      "summary": {
+        "amr_hits": 17,
+        "methods": {
+          "ALLELEX": 2,
+          "EXACTX": 9,
+          "POINTX": 7
+        },
+        "mutation_hits": 7,
+        "total_hits": 18
+      },
+      "evidence_sha256": "3a01b592998d559e28ac9796b0904d3e25c33d732dcf7ad3346c540e210dabb5",
+      "run_manifest_sha256": "bf4938b90862fd1eaa75b09ff8d0d89ae6cdb97242615cbb177fea4ff2376780",
+      "software_version": "4.2.7",
+      "database_version_report": "Software directory: '/mnt/d/SEM-7/DNA/Antibiotic Resistance Gene Detection & Prediction using bacterial genome sequence/data/external/amrfinderplus/'\nSoftware version: 4.2.7\nDatabase directory: '/mnt/d/SEM-7/DNA/Antibiotic Resistance Gene Detection & Prediction using bacterial genome sequence/data/external/amrfinderplus/data/2026-08-07.1'\nDatabase version: 2026-08-07.1\nRunning: '/mnt/d/SEM-7/DNA/Antibiotic Resistance Gene Detection & Prediction using bacterial genome sequence/data/external/amrfinderplus/amrfinder' -d '/mnt/d/SEM-7/DNA/Antibiotic Resistance Gene Detection & Prediction using bacterial genome sequence/data/external/amrfinderplus/data/2026-08-07.1' -V\namrfinder took 0 seconds to complete"
+    },
+    {
+      "biosample_accession": "SAMN03177615",
+      "assembly_accession": "GCF_000819375.1",
+      "split": "validation",
+      "status": "completed",
+      "summary": {
+        "amr_hits": 6,
+        "methods": {
+          "ALLELEX": 1,
+          "BLASTX": 1,
+          "EXACTX": 4
+        },
+        "mutation_hits": 0,
+        "total_hits": 6
+      },
+      "evidence_sha256": "ce4f2f2f605394ef9d4a9862d9d185c85698a2ec793d6f72a0c72f5544314977",
+      "run_manifest_sha256": "1a22d3baeb883264277277458e352e23a27679d6c0b6d4e0fb650377860b1c43",
+      "software_version": "4.2.7",
+      "database_version_report": "Software directory: '/mnt/d/SEM-7/DNA/Antibiotic Resistance Gene Detection & Prediction using bacterial genome sequence/data/external/amrfinderplus/'\nSoftware version: 4.2.7\nDatabase directory: '/mnt/d/SEM-7/DNA/Antibiotic Resistance Gene Detection & Prediction using bacterial genome sequence/data/external/amrfinderplus/data/2026-08-07.1'\nDatabase version: 2026-08-07.1\nRunning: '/mnt/d/SEM-7/DNA/Antibiotic Resistance Gene Detection & Prediction using bacterial genome sequence/data/external/amrfinderplus/amrfinder' -d '/mnt/d/SEM-7/DNA/Antibiotic Resistance Gene Detection & Prediction using bacterial genome sequence/data/external/amrfinderplus/data/2026-08-07.1' -V\namrfinder took 0 seconds to complete"
+    },
+    {
+      "biosample_accession": "SAMN11638310",
+      "assembly_accession": "GCA_014625455.1",
+      "split": "test",
+      "status": "completed",
+      "summary": {
+        "amr_hits": 35,
+        "methods": {
+          "ALLELEX": 12,
+          "EXACTX": 16,
+          "PARTIALX": 1,
+          "PARTIAL_CONTIG_ENDX": 1,
+          "POINTX": 7
+        },
+        "mutation_hits": 7,
+        "total_hits": 37
+      },
+      "evidence_sha256": "8630aaffbc2a5ec0795d7b03b57dacd66abbd4a063027d56b813b1aeee78d4a3",
+      "run_manifest_sha256": "59c9d95443e506dd22e6327781b3f1a89d0d05f88da7f68f7aeaa9ea805a1f23",
+      "software_version": "4.2.7",
+      "database_version_report": "Software directory: '/mnt/d/SEM-7/DNA/Antibiotic Resistance Gene Detection & Prediction using bacterial genome sequence/data/external/amrfinderplus/'\nSoftware version: 4.2.7\nDatabase directory: '/mnt/d/SEM-7/DNA/Antibiotic Resistance Gene Detection & Prediction using bacterial genome sequence/data/external/amrfinderplus/data/2026-08-07.1'\nDatabase version: 2026-08-07.1\nRunning: '/mnt/d/SEM-7/DNA/Antibiotic Resistance Gene Detection & Prediction using bacterial genome sequence/data/external/amrfinderplus/amrfinder' -d '/mnt/d/SEM-7/DNA/Antibiotic Resistance Gene Detection & Prediction using bacterial genome sequence/data/external/amrfinderplus/data/2026-08-07.1' -V\namrfinder took 0 seconds to complete"
+    }
+  ]
+}

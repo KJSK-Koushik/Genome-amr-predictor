@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Large or generated data
+/data/raw/**
+/data/interim/**
+/data/processed/**
+/data/external/**
+!/data/raw/.gitkeep
+!/data/interim/.gitkeep
+!/data/processed/.gitkeep
+!/data/external/.gitkeep
+/models/**
+!/models/.gitkeep
+
+# Local artifacts created before repository initialization
+/assets/
+/output/
+/tmp/
+/graphify-out/
+
+# Generated audit scratch files
+/reports/phase1/**/records.csv
+/reports/phase2/pilot/
+/reports/**/input.fna
+/reports/**/input.fna.gz

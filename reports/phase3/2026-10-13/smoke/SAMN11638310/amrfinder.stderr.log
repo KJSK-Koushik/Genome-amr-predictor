@@ -1,0 +1,10 @@
+Running: '/mnt/d/SEM-7/DNA/Antibiotic Resistance Gene Detection & Prediction using bacterial genome sequence/data/external/amrfinderplus/amrfinder' -n '/mnt/d/SEM-7/DNA/Antibiotic Resistance Gene Detection & Prediction using bacterial genome sequence/reports/phase3/2026-10-13/smoke/SAMN11638310/genome-amr-laaf7mdo/genome.fna' -d '/mnt/d/SEM-7/DNA/Antibiotic Resistance Gene Detection & Prediction using bacterial genome sequence/data/external/amrfinderplus/data/2026-08-07.1' -O Escherichia --threads 4 --print_node -o '/mnt/d/SEM-7/DNA/Antibiotic Resistance Gene Detection & Prediction using bacterial genome sequence/reports/phase3/2026-10-13/smoke/SAMN11638310/amrfinder.tsv'
+Software directory: /mnt/d/SEM-7/DNA/Antibiotic Resistance Gene Detection & Prediction using bacterial genome sequence/data/external/amrfinderplus/
+Software version: 4.2.7
+Database directory: /mnt/d/SEM-7/DNA/Antibiotic Resistance Gene Detection & Prediction using bacterial genome sequence/data/external/amrfinderplus/data/2026-08-07.1
+Database version: 2026-08-07.1
+AMRFinder translated nucleotide and mutation search
+Running tblastn
+Running blastn
+Making report
+amrfinder took 37 seconds to complete

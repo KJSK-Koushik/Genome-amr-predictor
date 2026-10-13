@@ -1,0 +1,9 @@
+antibiotic,unique_biosamples,total_records,resistant,susceptible,intermediate,excluded,binary_total,minority_fraction,recommendation,reason
+ampicillin,9785,9789,3917,4267,16,1589,8184,0.4786,retain,meets Phase 1 thresholds
+ceftriaxone,7344,7348,1646,5665,12,25,7311,0.2251,retain,meets Phase 1 thresholds
+ciprofloxacin,9083,9089,1546,6587,161,795,8133,0.1901,retain,meets Phase 1 thresholds
+gentamicin,9991,9997,1321,6467,108,2101,7788,0.1696,retain,meets Phase 1 thresholds
+tetracycline,8910,8913,3250,4169,47,1447,7419,0.4381,retain,meets Phase 1 thresholds
+trimethoprim-sulfamethoxazole,9113,9118,1500,6053,1,1564,7553,0.1986,retain,meets Phase 1 thresholds
+cefepime,4740,4742,768,3084,91,799,3852,0.1994,retain,meets Phase 1 thresholds
+meropenem,7385,7386,225,6400,18,743,6625,0.034,defer,minority fraction below threshold

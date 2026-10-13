@@ -1,0 +1,22 @@
+{
+  "seed": 1729,
+  "candidates": {
+    "logistic_regression_C": [0.1, 1.0, 10.0],
+    "random_forest_max_depth": [10, null],
+    "random_forest_estimators": 200
+  },
+  "selection_metric": "validation_average_precision",
+  "feature_sets": ["detector", "detector_quality"],
+  "calibration": "sigmoid_with_training_group_out_of_fold_scores",
+  "calibration_folds": 5,
+  "threshold_metric": "validation_matthews_correlation",
+  "mash": {
+    "kmer_length": 21,
+    "sketch_size": 1000,
+    "distance_thresholds": [0.005, 0.01],
+    "maximum_p_value": 0.00001
+  },
+  "test_policy": "Evaluate after all seven model choices are saved; do not retune from test results",
+  "artifact_status": "research_candidate_not_approved_for_user_confidence",
+  "mechanism_features": "omitted_when_not_curated"
+}
