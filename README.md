@@ -1,74 +1,16 @@
 # Genome AMR Predictor
 
-Genome AMR Predictor is a research and educational system for analyzing assembled bacterial
-genomes. The planned system has two deliberately separate outputs:
+Genome AMR Predictor is a research and educational system for analysing assembled
+*Escherichia coli* genomes. It produces two deliberately separate outputs:
 
-1. detection of known antimicrobial-resistance genes and supported mutations; and
-2. machine-learning prediction of resistant or susceptible phenotypes for selected antibiotics.
+1. **Known resistance determinants**: genes, alleles and point mutations detected by NCBI
+   AMRFinderPlus 4.2.7 (database 2026-08-07.1); and
+2. **Predicted phenotypes**: resistant/susceptible calls for ampicillin, ceftriaxone,
+   ciprofloxacin, gentamicin and tetracycline from published pretrained models. Cefepime and
+   trimethoprim/sulfamethoxazole are reported as unsupported.
 
-The first release is scoped to *Escherichia coli*. It is not a clinical diagnostic system and
-does not recommend treatment. Laboratory confirmation is required.
-
-## Current status
-
-**Deadline scope: five pretrained phenotype models are runnable and verified.**
-
-Run `./scripts/run_pretrained.ps1` in PowerShell for a real genome demonstration, or provide
-`-Fasta "C:/path/genome.fna.gz" -OutputDir "reports/my-genome"`. JSON and CSV exports include
-source provenance and quality checks. Ampicillin, ceftriaxone, ciprofloxacin, gentamicin and
-tetracycline are supported; cefepime and trimethoprim/sulfamethoxazole explicitly abstain.
-See the [pretrained delivery note](docs/pretrained-deadline-delivery.md) for attribution,
-verification and limitations. These externally trained models have not been evaluated for
-independent accuracy on our cohort.
-
-The completed 2026-08-17 audit processed 11,075 *E. coli* BioSamples and 171,471 AST rows.
-See the [Phase 1 completion note](docs/phase-1-completion.md) and the
-[generated audit report](reports/phase1/2026-08-17/audit_report.md).
-
-Phase 1 provided:
-
-- a reproducible Python 3.11 package;
-- typed records and label-normalization rules;
-- a public NCBI BioSample antibiogram ingestion path;
-- support for later AST Browser CSV/TSV imports;
-- compact data-quality and class-balance reports; and
-- tests and continuous integration.
-
-Phase 2 produced 7,911 verified genomes and 47,485 observed R/S labels across seven antibiotics.
-The frozen splits contain 5,592 training, 749 validation, and 1,570 test genomes; all 46 project
-groups stay within one split. Sequence QC and artifact verification passed, with no exact sequence
-duplicates. See the [Phase 2 completion note](docs/phase-2-completion.md),
-[final cohort report](reports/phase2/2026-08-18/final/final_report.md), and
-[data contract](docs/phase-2-data-contract.md). Genomic-similarity sensitivity analysis remains
-required before final model performance claims.
-
-Phase 3 adds the AMRFinderPlus adapter, versioned structured result parsing, NCBI class/subclass
-and hierarchy mapping, and detection provenance. AMRFinderPlus 4.2.7 with database 2026-08-07.1
-passed all four upstream reference tests and live detection on three frozen cohort genomes.
-The package suite passes 66 tests. See the [Phase 3 completion note](docs/phase-3-completion.md)
-and [detection contract](docs/phase-3-detection-contract.md) for commands, evidence, and limitations.
-The web interface remains scheduled for a later phase.
-
-The original Phase 4 detection batch is suspended to prioritize the user-requested pretrained
-deadline scope, with 228 successful calls preserved. Genomic-similarity groups are complete
-for all 7,911 genomes.
-Its modeling pipeline compares logistic regression and random forest, fits calibration on
-project-separated training folds, freezes model choices before test evaluation, and writes
-research model cards. See the [Phase 4 modeling contract](docs/phase-4-modeling-contract.md).
-Real cohort model metrics remain pending full computation and verification.
-
-Phase 5 adds the integrated `analyze` command (`./scripts/run_phase5.ps1`). It validates the input
-genome, runs the pretrained phenotype models and AMRFinderPlus, and writes one versioned run
-directory with JSON, CSV and Markdown outputs. Stage failures stay isolated, and a failed or
-unverifiable detector is never reported as "no genes found". See the
-[Phase 5 completion note](docs/phase-5-completion.md) and
-[integrated analysis contract](docs/phase-5-engine-contract.md).
-
-Phase 6 adds a Streamlit dashboard (`./scripts/run_dashboard.ps1`, then open
-http://localhost:8501). You can upload a genome or open a saved run, view prediction and
-determinant charts, and download PDF, JSON, CSV and Markdown reports. Every run is verified
-against its recorded hashes before display. `genome-amr export-pdf` produces the same PDF from the
-command line. See the [Phase 6 completion note](docs/phase-6-completion.md).
+It is not a clinical diagnostic system and does not recommend treatment. Laboratory confirmation
+is required.
 
 ## Quick start
 
@@ -76,58 +18,84 @@ command line. See the [Phase 6 completion note](docs/phase-6-completion.md).
 py -3.11 -m venv .venv
 .venv\Scripts\Activate.ps1
 python -m pip install -e ".[dev,ml,ui]"
-python -m pytest
+python scripts/import_pretrained_hzi.py          # pinned pretrained models
+python examples/fetch_examples.py                # three verified example genomes
+python scripts/verify_delivery.py                # tests + every phase verifier
+./scripts/run_dashboard.ps1                      # http://localhost:8501
 ```
 
-Run a small live NCBI audit:
+Clone to a short path such as `D:\amr`, because of Windows path limits. AMRFinderPlus runs in
+WSL Ubuntu. See the [user guide](docs/user-guide.md) for detector setup, inputs, the command line,
+how to read results, and troubleshooting.
 
-```powershell
-python -m genome_amr_predictor audit-ncbi `
-  --config configs/phase1_audit.json `
-  --output-dir reports/local-audit `
-  --max-records 100
-```
+## Documentation
 
-Run the full current BioSample antibiogram audit by setting `--max-records 0`. Raw XML is parsed
-in batches and is not retained. The command writes only summaries unless `--write-records` is
-provided.
+| Document | Purpose |
+| --- | --- |
+| [User guide](docs/user-guide.md) | Setup, running analyses, interpreting outputs |
+| [Demonstration guide](docs/demonstration-guide.md) | 12-minute live demo script with fallbacks |
+| [Examples](examples/README.md) | Public example genomes and saved outputs |
+| [Phase 7 completion](docs/phase-7-completion.md) | Final verification results and known limitations |
+| [Pretrained models](docs/pretrained-deadline-delivery.md) | Model source, attribution, verification |
+| [Integrated analysis contract](docs/phase-5-engine-contract.md) | Run stages, failure rules, output files |
+| [Detection contract](docs/phase-3-detection-contract.md) | AMRFinderPlus adapter and provenance |
+| [Data contract](docs/phase-2-data-contract.md) | Cohort construction and frozen splits |
 
-Audit a CSV or TSV exported from the NCBI AST Browser:
+## Project status
 
-```powershell
-python -m genome_amr_predictor audit-file `
-  --input path\to\ast-export.csv `
-  --config configs/phase1_audit.json `
-  --output-dir reports/local-file-audit
-```
+All seven planned phases are delivered. The one exception is Phase 4's locally trained models:
+full-cohort training was paused in favour of pretrained models, so the project makes **no
+accuracy claim on its own cohort**.
 
-File audits apply the species configured in `phase1_audit.json`, recognize the AST Browser's
-`#BioSample` header, repair a known doubled-quote export defect, and record the source file's
-SHA-256 fingerprint. Raw downloaded datasets remain ignored by Git.
+| Phase | Outcome | Evidence |
+| --- | --- | --- |
+| 1 Foundation and audit | 11,075 BioSamples and 171,471 AST rows audited | [note](docs/phase-1-completion.md) |
+| 2 Dataset | 7,911 verified genomes, 47,485 R/S labels; 5,592 / 749 / 1,570 project-grouped splits | [note](docs/phase-2-completion.md) |
+| 3 Detection | AMRFinderPlus adapter; 4/4 NCBI reference tests; 3 live genomes | [note](docs/phase-3-completion.md) |
+| 4 Modelling | Pipeline and similarity groups (7,911 genomes) built; cohort detection paused at 228 genomes; pretrained HZI models imported and verified | [contract](docs/phase-4-modeling-contract.md), [pretrained](docs/pretrained-deadline-delivery.md) |
+| 5 Integrated engine | `analyze` command, isolated stage failures, verified detection reuse | [note](docs/phase-5-completion.md) |
+| 6 Interface | Streamlit dashboard; PDF/JSON/CSV/Markdown downloads | [note](docs/phase-6-completion.md) |
+| 7 Delivery | Clean-clone tests, all-phase verification, guides, examples | [note](docs/phase-7-completion.md) |
+
+## Commands
+
+| Command | Purpose |
+| --- | --- |
+| `./scripts/run_dashboard.ps1` | Dashboard: upload a genome or open a saved run |
+| `genome-amr analyze --fasta … --sample-id … --output-dir …` | One integrated analysis (exit 0/1/2 = completed/partial/failed) |
+| `genome-amr export-pdf --run-dir … --output …` | PDF from a verified run |
+| `genome-amr detect` / `parse-detection` | AMRFinderPlus only |
+| `python scripts/verify_delivery.py [--portable]` | Re-run all checks; `--portable` skips detector/genome checks |
+| `genome-amr audit-ncbi` / `audit-file` | Phase 1 AST label audits ([note](docs/phase-1-completion.md)) |
+
+Run `genome-amr` as `python -m genome_amr_predictor` if the console script is not on PATH.
 
 ## Repository layout
 
 ```text
-configs/                         Versioned audit configuration
-data/                            Ignored raw/interim/processed data directories
-docs/                            Architecture, data contract, decisions, overview report
-models/                          Ignored future model artifacts
-reports/phase1/                  Committed compact audit summaries
-reports/phase2/                  Frozen cohort manifests and quality reports
-scripts/                         Reproducible command wrappers
-src/genome_amr_predictor/        Application package
-tests/                           Unit and integration-style fixture tests
+configs/                         Frozen audit, cohort, modelling and engine configuration
+data/                            Ignored raw genomes, interim files and analysis runs
+docs/                            Guides, phase notes, contracts and decisions
+examples/                        Example genome fetcher and guide
+models/                          Ignored imported model artifacts
+reports/                         Committed evidence per phase (genome copies are ignored)
+scripts/                         Reproducible run and verification wrappers
+src/genome_amr_predictor/        Application package, including dashboard.py
+tests/                           Unit, integration and dashboard tests
 ```
 
-## Data sources
+## Data and model sources
 
 - [NCBI Pathogen Detection AST documentation](https://www.ncbi.nlm.nih.gov/pathogens/docs/ast/)
 - [NCBI BioSample](https://www.ncbi.nlm.nih.gov/biosample/)
 - [NCBI Datasets genome download documentation](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/how-tos/genomes/download-genome/)
 - [NCBI genome assembly report fields](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/reference-docs/data-reports/genome-assembly/)
 - [NCBI AMRFinderPlus](https://www.ncbi.nlm.nih.gov/pathogens/antimicrobial-resistance/AMRFinder/)
+- [HZI AMR prediction pipeline](https://github.com/hzi-bifo/AMR_prediction_pipeline) (MIT), source of the pretrained models
 
 ## Safety boundary
 
 Outputs from this project are computational research results. A detected gene does not always
-guarantee phenotypic resistance, and an ML prediction is not a treatment recommendation.
+mean phenotypic resistance, and the absence of detected genes does not establish susceptibility.
+An ML prediction is not a treatment recommendation. Prediction scores are not calibrated
+probabilities, and the species is assumed rather than verified.
