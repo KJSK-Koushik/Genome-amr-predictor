@@ -1,0 +1,194 @@
+{
+  "config_sha256": "1d8c79a54a5fe7585002b42f9c8661732246c98cd4730534226f2444807d5399",
+  "detection": {
+    "error": "Detection result belongs to a different input genome",
+    "evidence": null,
+    "status": "failed"
+  },
+  "engine_sha256": "63cd3fce93f5703ba770c519834371032a771cc884270db4e48b739a18adaac2",
+  "errors": [
+    {
+      "message": "Detection result belongs to a different input genome",
+      "stage": "detection"
+    }
+  ],
+  "finished_at_utc": "2026-10-13T18:07:36.557067+00:00",
+  "input": {
+    "ambiguous_bases": 0,
+    "ambiguous_percent": 0.0,
+    "contig_count": 145,
+    "contig_n50": 132774,
+    "file_sha256": "177e5a3d178e0bc543db1a1a1855cb0ae89985431395fc65093d32a2de7aee7d",
+    "gc_percent": 50.42898,
+    "path": "D:\\SEM-7\\DNA\\Antibiotic Resistance Gene Detection & Prediction using bacterial genome sequence\\data\\raw\\phase2-genomes\\shard-0028\\package\\ncbi_dataset\\data\\GCA_059054765.1\\GCA_059054765.1_PDT002991521.1_genomic.fna.gz",
+    "sequence_sha256": "7ff2a736392090243421e5917b094d76ee5f561bba1d46bc0afee11574049089",
+    "snapshot": "D:\\SEM-7\\DNA\\Antibiotic Resistance Gene Detection & Prediction using bacterial genome sequence\\reports\\phase5\\2026-10-13\\mismatched-cache\\input.fna.gz",
+    "species": "Escherichia coli",
+    "total_length": 5328809
+  },
+  "package_version": "0.1.0",
+  "phenotype_prediction": {
+    "result": {
+      "created_at": "2026-10-13T18:07:35.360691+00:00",
+      "input": "reports\\phase5\\2026-10-13\\mismatched-cache\\input.fna.gz",
+      "input_sha256": "177e5a3d178e0bc543db1a1a1855cb0ae89985431395fc65093d32a2de7aee7d",
+      "model_provenance": {
+        "artifacts": {
+          "ampicillin.json": "4f80285499d1420a469858be845110e31ffbedb09950420fbac95ed4b6c2de5b",
+          "ceftriaxone.json": "f522e3710632db21d8405005b0e4bb25c9f1abcc16cb2fee578ed6d2eceb0f34",
+          "ciprofloxacin.json": "c050fad9672cec6c404b049e31a64512fa06fa51ff8a9dcf908787eeb11ff1e7",
+          "gentamicin.json": "ae524ec0cfbb682782c1070a1010ba1a7bd1992d6b7bfc98fe1bf59110bdf140",
+          "tetracycline.json": "a9600a3cf17792f66e00daa050b02657d063945c58bc9d50d9d24412906f740f"
+        },
+        "commit": "717fa43d002060a3759efaf616f9dd887f6c0db1",
+        "feature_transform": "binary canonical k-mer presence in upstream vocabulary order",
+        "k": 13,
+        "license": "MIT",
+        "limitations": [
+          "External models; not validated on our cohort.",
+          "Training overlap with our NCBI/PATRIC cohort is unknown.",
+          "Scores are not locally calibrated probabilities.",
+          "Cefepime and trimethoprim/sulfamethoxazole unsupported."
+        ],
+        "repository": "https://github.com/hzi-bifo/AMR_prediction_pipeline",
+        "scenario": "kma",
+        "schema": "hzi-pretrained-v1",
+        "source_files": {
+          "ampicillin_model.sav": {
+            "sha256": "b73a9a071c694b32404e25b2e39ae0ca0ad77116c2f0fdac9842704d374a91f8",
+            "url": "https://raw.githubusercontent.com/hzi-bifo/AMR_prediction_pipeline/717fa43d002060a3759efaf616f9dd887f6c0db1/AMR_software/PhenotypeSeeker/bin/model/kma/Escherichia_coli/Escherichia_coli_ampicillin_f1_macro_finalized_model.sav"
+          },
+          "ampicillin_vocab.zip": {
+            "sha256": "491f6c3545936f0e4de862a0b2dfb725601ce5d924e63c4c6febad992a966c55",
+            "url": "https://raw.githubusercontent.com/hzi-bifo/AMR_prediction_pipeline/717fa43d002060a3759efaf616f9dd887f6c0db1/AMR_software/PhenotypeSeeker/bin/feature/Escherichia_coli/ampicillin_vocab.npy.zip"
+          },
+          "ceftriaxone_model.sav": {
+            "sha256": "0f87c236c615ed9f868171c627894c2c40a232732199cd67c270759754f532db",
+            "url": "https://raw.githubusercontent.com/hzi-bifo/AMR_prediction_pipeline/717fa43d002060a3759efaf616f9dd887f6c0db1/AMR_software/PhenotypeSeeker/bin/model/kma/Escherichia_coli/Escherichia_coli_ceftriaxone_f1_macro_finalized_model.sav"
+          },
+          "ceftriaxone_vocab.zip": {
+            "sha256": "7a58257abed2523acbf07461aa4dcdf9f5ea2c58481123144bf6ca43af2fc111",
+            "url": "https://raw.githubusercontent.com/hzi-bifo/AMR_prediction_pipeline/717fa43d002060a3759efaf616f9dd887f6c0db1/AMR_software/PhenotypeSeeker/bin/feature/Escherichia_coli/ceftriaxone_vocab.npy.zip"
+          },
+          "ciprofloxacin_model.sav": {
+            "sha256": "9fca24ae583e1aa227c9df60bace264b10813bc166902c26c8a156d54d83653e",
+            "url": "https://raw.githubusercontent.com/hzi-bifo/AMR_prediction_pipeline/717fa43d002060a3759efaf616f9dd887f6c0db1/AMR_software/PhenotypeSeeker/bin/model/kma/Escherichia_coli/Escherichia_coli_ciprofloxacin_f1_macro_finalized_model.sav"
+          },
+          "ciprofloxacin_vocab.zip": {
+            "sha256": "f042a627dcfbc69edec9896185fc4ce65b31d65cbdc110190bdc3c5be5fd635b",
+            "url": "https://raw.githubusercontent.com/hzi-bifo/AMR_prediction_pipeline/717fa43d002060a3759efaf616f9dd887f6c0db1/AMR_software/PhenotypeSeeker/bin/feature/Escherichia_coli/ciprofloxacin_vocab.npy.zip"
+          },
+          "gentamicin_model.sav": {
+            "sha256": "4290f905af30247d1733ce0fec5b856fe920ce4f1627507cf3b3d353549cc2f5",
+            "url": "https://raw.githubusercontent.com/hzi-bifo/AMR_prediction_pipeline/717fa43d002060a3759efaf616f9dd887f6c0db1/AMR_software/PhenotypeSeeker/bin/model/kma/Escherichia_coli/Escherichia_coli_gentamicin_f1_macro_finalized_model.sav"
+          },
+          "gentamicin_vocab.zip": {
+            "sha256": "6309d9de3db0dd7f33885034bcde209fdcc1c8dca90ca50c661f2eeb945e6262",
+            "url": "https://raw.githubusercontent.com/hzi-bifo/AMR_prediction_pipeline/717fa43d002060a3759efaf616f9dd887f6c0db1/AMR_software/PhenotypeSeeker/bin/feature/Escherichia_coli/gentamicin_vocab.npy.zip"
+          },
+          "tetracycline_model.sav": {
+            "sha256": "d5a91d0d365793c78a5340b42f19ba86485d278ff7c80fb0a1feffabc8d39115",
+            "url": "https://raw.githubusercontent.com/hzi-bifo/AMR_prediction_pipeline/717fa43d002060a3759efaf616f9dd887f6c0db1/AMR_software/PhenotypeSeeker/bin/model/kma/Escherichia_coli/Escherichia_coli_tetracycline_f1_macro_finalized_model.sav"
+          },
+          "tetracycline_vocab.zip": {
+            "sha256": "0341f13ea3883429527aec54819fc0e36155fb98a981ebc68033578aeaaba67a",
+            "url": "https://raw.githubusercontent.com/hzi-bifo/AMR_prediction_pipeline/717fa43d002060a3759efaf616f9dd887f6c0db1/AMR_software/PhenotypeSeeker/bin/feature/Escherichia_coli/tetracycline_vocab.npy.zip"
+          }
+        },
+        "species": "Escherichia coli"
+      },
+      "predictions": [
+        {
+          "antibiotic": "ampicillin",
+          "features_present": 999,
+          "features_total": 1000,
+          "prediction": "R",
+          "resistance_score": 0.9851508612917711,
+          "status": "predicted"
+        },
+        {
+          "antibiotic": "ceftriaxone",
+          "features_present": 236,
+          "features_total": 1000,
+          "prediction": "S",
+          "resistance_score": 0.49081349550134634,
+          "status": "predicted"
+        },
+        {
+          "antibiotic": "ciprofloxacin",
+          "features_present": 447,
+          "features_total": 1000,
+          "prediction": "S",
+          "resistance_score": 0.04182867870555227,
+          "status": "predicted"
+        },
+        {
+          "antibiotic": "gentamicin",
+          "features_present": 1,
+          "features_total": 1000,
+          "prediction": "S",
+          "resistance_score": 0.25430668306807475,
+          "status": "predicted"
+        },
+        {
+          "antibiotic": "tetracycline",
+          "features_present": 11,
+          "features_total": 1000,
+          "prediction": "S",
+          "resistance_score": 0.11033545384867041,
+          "status": "predicted"
+        },
+        {
+          "antibiotic": "cefepime",
+          "features_present": null,
+          "features_total": null,
+          "prediction": null,
+          "resistance_score": null,
+          "status": "unsupported"
+        },
+        {
+          "antibiotic": "trimethoprim/sulfamethoxazole",
+          "features_present": null,
+          "features_total": null,
+          "prediction": null,
+          "resistance_score": null,
+          "status": "unsupported"
+        }
+      ],
+      "quality": {
+        "ambiguous_bases": 0,
+        "bases": 5328809,
+        "contigs": 145,
+        "sequence_sha256": "15500645f8e057d0910731b4d4a2756c3e85323a18e850ab25be10a1646728f9"
+      },
+      "registry_sha256": "3cc237807c58733044a88b46f3995d43726703e45d0d23bc3129bfc2507fc2a2",
+      "schema": "pretrained-prediction-v1",
+      "species": "Escherichia coli (user-supplied; not automatically verified)",
+      "use": "Research/education only; requires laboratory confirmation.",
+      "warnings": [
+        "External models; not validated on our cohort.",
+        "Training overlap with our NCBI/PATRIC cohort is unknown.",
+        "Scores are not locally calibrated probabilities.",
+        "Cefepime and trimethoprim/sulfamethoxazole unsupported."
+      ]
+    },
+    "status": "completed"
+  },
+  "prediction_code_sha256": "1103dfe89415e537ffc6500dec259f178b52ed51deafceffb90791d9437ce344",
+  "sample_id": "mismatch-check",
+  "schema_version": "genome-amr-analysis-v1",
+  "stage": "finished",
+  "started_at_utc": "2026-10-13T18:07:32.872148+00:00",
+  "status": "partial",
+  "warnings": [
+    "Research and educational use only; laboratory confirmation is required.",
+    "Known determinant detection and predicted phenotypes are separate outputs.",
+    "No detected determinant does not establish susceptibility.",
+    "E. coli species is user-supplied; automatic identification is unavailable.",
+    "External models; not validated on our cohort.",
+    "Training overlap with our NCBI/PATRIC cohort is unknown.",
+    "Scores are not locally calibrated probabilities.",
+    "Cefepime and trimethoprim/sulfamethoxazole unsupported.",
+    "Detection failed; gene presence/absence is unknown."
+  ]
+}

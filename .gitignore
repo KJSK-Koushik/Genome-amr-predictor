@@ -36,6 +36,10 @@ Thumbs.db
 /assets/
 /output/
 /tmp/
+/graphify-out/
 
 # Generated audit scratch files
 /reports/phase1/**/records.csv
+/reports/phase2/pilot/
+/reports/phase5/**/input.fna
+/reports/phase5/**/input.fna.gz

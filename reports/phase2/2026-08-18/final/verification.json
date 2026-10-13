@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "unique_genomes": 7911,
+  "phenotype_rows": 47485,
+  "project_groups": 46,
+  "exact_sequence_duplicates": 0,
+  "project_split_overlap": 0,
+  "changed_frozen_endpoints": 0,
+  "retained_conflicting_endpoints": 0,
+  "both_classes_per_antibiotic_split": true,
+  "limitation": "Genomic-distance/lineage leakage is not evaluated by these checks."
+}

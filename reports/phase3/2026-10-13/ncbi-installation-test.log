@@ -1,0 +1,57 @@
+Testing ./amrfinder
+-n option detected, skipping download of test data and using tests in
+/opt/genome-amr/amrfinderplus/4.2.7.  Note test data may not match the latest database release.
+Running: ./amrfinder -p test_prot.fa -g test_prot.gff -O Escherichia --plus --print_node --threads 1
+Software directory: /opt/genome-amr/amrfinderplus/4.2.7/
+Software version: 4.2.7
+Database directory: /opt/genome-amr/amrfinderplus/4.2.7/data/2026-08-07.1
+Database version: 2026-08-07.1
+AMRFinder protein-only and mutation search
+  - include -n NUC_FASTA, --nucleotide NUC_FASTA and -g GFF_FILE, --gff GFF_FILE options to add translated searches
+Running blastp
+Running hmmsearch
+Making report
+amrfinder took 4 seconds to complete
+ok: test_prot
+Running: ./amrfinder -n test_dna.fa -O Escherichia --mutation_all test_dna_mut_all.got --plus --print_node --threads 1
+Software directory: /opt/genome-amr/amrfinderplus/4.2.7/
+Software version: 4.2.7
+Database directory: /opt/genome-amr/amrfinderplus/4.2.7/data/2026-08-07.1
+Database version: 2026-08-07.1
+AMRFinder translated nucleotide and mutation search
+Running blastx
+Running blastn
+Running stxtyper
+Making report
+amrfinder took 395 seconds to complete
+ok: test_dna
+Running: ./amrfinder -n test_dna.fa -g test_prot.gff -p test_prot.fa -O Escherichia --plus --print_node --threads 1
+Software directory: /opt/genome-amr/amrfinderplus/4.2.7/
+Software version: 4.2.7
+Database directory: /opt/genome-amr/amrfinderplus/4.2.7/data/2026-08-07.1
+Database version: 2026-08-07.1
+AMRFinder combined translated and protein and mutation search
+Running blastp
+Running hmmsearch
+Running blastx
+Running blastn
+Running stxtyper
+Making report
+amrfinder took 417 seconds to complete
+ok: test_both
+Running: ./amrfinder -n test_disrupt.fa -O Klebsiella_pneumoniae --plus --print_node --threads 1
+Software directory: /opt/genome-amr/amrfinderplus/4.2.7/
+Software version: 4.2.7
+Database directory: /opt/genome-amr/amrfinderplus/4.2.7/data/2026-08-07.1
+Database version: 2026-08-07.1
+AMRFinder translated nucleotide and mutation search
+Running blastx
+Running blastn
+Making report
+amrfinder took 230 seconds to complete
+ok: test_disrupt
+Done.
+
+
+ok: all 4 amrfinder tests passed 
+Success!

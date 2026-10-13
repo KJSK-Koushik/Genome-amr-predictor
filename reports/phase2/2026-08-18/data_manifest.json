@@ -1,0 +1,100 @@
+{
+  "assembly_cache_file": "full_assemblies.jsonl",
+  "assembly_cache_sha256": "87c75a79522e09071522606e072441a3a8a1dffcb0be1f6d1be9f22754f51c5e",
+  "cohort_summary": {
+    "biosamples_passing_metadata_qc": 7911,
+    "biosamples_with_binary_labels": 8273,
+    "biosamples_with_selected_assemblies": 7931,
+    "conflicting_label_pairs_removed": 1,
+    "duplicate_label_rows_removed": 29,
+    "exclusion_reasons": {
+      "contig_n50_too_low": 2,
+      "no_assembly": 342,
+      "too_many_contigs": 20
+    },
+    "frozen_cohort_rows": 47485,
+    "generated_at_utc": "2026-08-18T06:21:44.570654+00:00",
+    "group_count": 46,
+    "largest_groups": [
+      {
+        "biosamples": 2638,
+        "group_id": "PRJNA292663"
+      },
+      {
+        "biosamples": 2075,
+        "group_id": "PRJNA809394"
+      },
+      {
+        "biosamples": 1545,
+        "group_id": "PRJNA514245"
+      },
+      {
+        "biosamples": 508,
+        "group_id": "PRJNA278886"
+      },
+      {
+        "biosamples": 335,
+        "group_id": "PRJNA885502"
+      }
+    ],
+    "normalized_binary_labels": 49702,
+    "rows_without_biosample_removed": 0,
+    "species": "Escherichia coli",
+    "split_actual_fractions": {
+      "test": 0.198458,
+      "train": 0.706864,
+      "validation": 0.094678
+    },
+    "split_biosamples": {
+      "test": 1570,
+      "train": 5592,
+      "validation": 749
+    },
+    "split_target_fractions": {
+      "test": 0.15,
+      "train": 0.7,
+      "validation": 0.15
+    }
+  },
+  "config": {
+    "antibiotics": [
+      "ampicillin",
+      "ceftriaxone",
+      "ciprofloxacin",
+      "gentamicin",
+      "tetracycline",
+      "trimethoprim-sulfamethoxazole",
+      "cefepime"
+    ],
+    "assembly_qc": {
+      "maximum_checkm_contamination": 5.0,
+      "maximum_contigs": 500,
+      "maximum_length": 6500000,
+      "minimum_checkm_completeness": 95.0,
+      "minimum_contig_n50": 20000,
+      "minimum_length": 4000000,
+      "reject_ani_mismatch": true,
+      "require_checkm": false
+    },
+    "assembly_request_batch_size": 50,
+    "species": "Escherichia coli",
+    "splits": {
+      "seed": "genome-amr-phase2-v1",
+      "test_fraction": 0.15,
+      "train_fraction": 0.7,
+      "validation_fraction": 0.15
+    }
+  },
+  "config_sha256": "c31acd58b000896cf08c88a84fb3f3a590e8827e5806479dd9950662a138eae7",
+  "ncbi_datasets_api": "https://api.ncbi.nlm.nih.gov/datasets/v2",
+  "package_version": "0.1.0",
+  "requested_biosamples": 8273,
+  "retrieved_at_utc": "2026-08-18T06:21:44.982744+00:00",
+  "source": "User-provided NCBI AST Browser export joined to NCBI Datasets assemblies",
+  "source_file": "asts.csv",
+  "source_file_sha256": "f9fa051f3fda97420c75d56dfac23784abcb4a8858b63d7f3ece25716b90326e",
+  "source_urls": [
+    "https://www.ncbi.nlm.nih.gov/datasets/docs/v2/",
+    "https://api.ncbi.nlm.nih.gov/datasets/v2"
+  ]
+}

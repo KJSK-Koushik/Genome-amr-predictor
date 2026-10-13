@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "runs": [
+    "live",
+    "reuse",
+    "mismatched-cache"
+  ],
+  "live_sample": "SAMN03075588",
+  "live_total_hits": 18,
+  "live_amr_hits": 17,
+  "predicted_antibiotics": 5,
+  "unavailable_antibiotics": 2,
+  "checks": [
+    "artifact hashes",
+    "input and snapshot hashes",
+    "raw/structured detection equality",
+    "prediction input binding",
+    "reuse equals live exports",
+    "mismatched cache rejected without hits",
+    "prediction retained on detection failure"
+  ],
+  "limitation": "Integration validation on one genome; no accuracy claim."
+}

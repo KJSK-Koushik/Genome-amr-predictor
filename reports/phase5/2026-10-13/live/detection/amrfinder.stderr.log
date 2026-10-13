@@ -1,0 +1,10 @@
+Running: /opt/genome-amr/amrfinderplus/4.2.7/amrfinder -n '/mnt/d/SEM-7/DNA/Antibiotic Resistance Gene Detection & Prediction using bacterial genome sequence/reports/phase5/2026-10-13/live/detection/genome-amr-ffcc0xq4/genome.fna' -d /opt/genome-amr/amrfinderplus/4.2.7/data/2026-08-07.1 -O Escherichia --threads 2 --print_node -o '/mnt/d/SEM-7/DNA/Antibiotic Resistance Gene Detection & Prediction using bacterial genome sequence/reports/phase5/2026-10-13/live/detection/amrfinder.tsv'
+Software directory: /opt/genome-amr/amrfinderplus/4.2.7/
+Software version: 4.2.7
+Database directory: /opt/genome-amr/amrfinderplus/4.2.7/data/2026-08-07.1
+Database version: 2026-08-07.1
+AMRFinder translated nucleotide and mutation search
+Running tblastn
+Running blastn
+Making report
+amrfinder took 49 seconds to complete

@@ -1,0 +1,8 @@
+antibiotic,prediction,resistance_score,status,features_present,features_total
+ampicillin,R,0.9956190754178524,predicted,760,1000
+ceftriaxone,R,0.7719025930339848,predicted,296,1000
+ciprofloxacin,R,0.997481003875323,predicted,363,1000
+gentamicin,R,0.9615584857998573,predicted,565,1000
+tetracycline,R,0.8665827841294002,predicted,28,1000
+cefepime,,,unsupported,,
+trimethoprim/sulfamethoxazole,,,unsupported,,

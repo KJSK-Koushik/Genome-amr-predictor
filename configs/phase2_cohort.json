@@ -1,0 +1,29 @@
+{
+  "species": "Escherichia coli",
+  "antibiotics": [
+    "ampicillin",
+    "ceftriaxone",
+    "ciprofloxacin",
+    "gentamicin",
+    "tetracycline",
+    "trimethoprim-sulfamethoxazole",
+    "cefepime"
+  ],
+  "assembly_request_batch_size": 50,
+  "assembly_qc": {
+    "minimum_length": 4000000,
+    "maximum_length": 6500000,
+    "maximum_contigs": 500,
+    "minimum_contig_n50": 20000,
+    "minimum_checkm_completeness": 95.0,
+    "maximum_checkm_contamination": 5.0,
+    "require_checkm": false,
+    "reject_ani_mismatch": true
+  },
+  "splits": {
+    "seed": "genome-amr-phase2-v1",
+    "train_fraction": 0.7,
+    "validation_fraction": 0.15,
+    "test_fraction": 0.15
+  }
+}

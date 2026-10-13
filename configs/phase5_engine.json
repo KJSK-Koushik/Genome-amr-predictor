@@ -1,0 +1,16 @@
+{
+  "schema_version": "genome-amr-engine-config-v1",
+  "species": "Escherichia coli",
+  "model_dir": "models/pretrained-hzi",
+  "registry_sha256": "3cc237807c58733044a88b46f3995d43726703e45d0d23bc3129bfc2507fc2a2",
+  "detector": {
+    "executable": "\\\\wsl.localhost\\Ubuntu\\opt\\genome-amr\\amrfinderplus\\4.2.7\\amrfinder",
+    "database": "\\\\wsl.localhost\\Ubuntu\\opt\\genome-amr\\amrfinderplus\\4.2.7\\data\\2026-08-07.1",
+    "wsl_distribution": "Ubuntu",
+    "software_version": "4.2.7",
+    "database_version": "2026-08-07.1",
+    "executable_sha256": "4eb352744346a6df05726f5b0805d934447be367305956f339c0435c0c432360",
+    "threads": 2,
+    "timeout_seconds": 1800
+  }
+}

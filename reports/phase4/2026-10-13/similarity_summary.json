@@ -1,0 +1,22 @@
+{
+  "status": "verified",
+  "genomes": 7911,
+  "mash_version": "2.3",
+  "close_pairs_at_maximum_distance": 1316812,
+  "groups_sha256": "645629e4990aece1cf5a88b6e9c6683a463eacc1a1af7235fa0338e1f838e5ea",
+  "cutoffs": {
+    "0.005": {
+      "components": 845,
+      "largest_component": 749,
+      "components_spanning_splits": 182,
+      "test_genomes_remaining_after_development_component_exclusion": 102
+    },
+    "0.01": {
+      "components": 136,
+      "largest_component": 2014,
+      "components_spanning_splits": 54,
+      "test_genomes_remaining_after_development_component_exclusion": 18
+    }
+  },
+  "limitation": "Approximate whole-genome similarity components; no phenotype performance or lineage classification claimed."
+}
