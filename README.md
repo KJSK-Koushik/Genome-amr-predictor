@@ -64,12 +64,18 @@ unverifiable detector is never reported as "no genes found". See the
 [Phase 5 completion note](docs/phase-5-completion.md) and
 [integrated analysis contract](docs/phase-5-engine-contract.md).
 
+Phase 6 adds a Streamlit dashboard (`./scripts/run_dashboard.ps1`, then open
+http://localhost:8501). You can upload a genome or open a saved run, view prediction and
+determinant charts, and download PDF, JSON, CSV and Markdown reports. Every run is verified
+against its recorded hashes before display. `genome-amr export-pdf` produces the same PDF from the
+command line. See the [Phase 6 completion note](docs/phase-6-completion.md).
+
 ## Quick start
 
 ```powershell
 py -3.11 -m venv .venv
 .venv\Scripts\Activate.ps1
-python -m pip install -e ".[dev,ml]"
+python -m pip install -e ".[dev,ml,ui]"
 python -m pytest
 ```
 

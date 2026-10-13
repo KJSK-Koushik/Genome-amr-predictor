@@ -172,6 +172,9 @@ def build_parser() -> argparse.ArgumentParser:
     analyze.add_argument("--output-dir", type=Path, required=True)
     analyze.add_argument("--config", type=Path, default=Path("configs/phase5_engine.json"))
     analyze.add_argument("--detection-cache", type=Path, default=None)
+    export = commands.add_parser("export-pdf", help="Render a verified analysis run as a PDF.")
+    export.add_argument("--run-dir", type=Path, required=True)
+    export.add_argument("--output", type=Path, required=True)
     return parser
 
 
@@ -465,6 +468,12 @@ def main(argv: list[str] | None = None) -> int:
             return (
                 0 if result["status"] == "completed" else 1 if result["status"] == "partial" else 2
             )
+        if args.command == "export-pdf":
+            from genome_amr_predictor.reporting import load_run, render_pdf
+
+            args.output.write_bytes(render_pdf(load_run(args.run_dir)))
+            print(json.dumps({"status": "written", "output": str(args.output)}))
+            return 0
         if args.command == "build-features":
             from genome_amr_predictor.features import build_features
 

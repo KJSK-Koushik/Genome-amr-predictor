@@ -27,6 +27,10 @@ ml = [
   "scipy>=1.13,<2",
   "joblib>=1.4,<2",
 ]
+ui = [
+  "streamlit>=1.50,<2",
+  "fpdf2>=2.8,<3",
+]
 dev = [
   "pytest>=8.3,<9",
   "pytest-cov>=6,<7",

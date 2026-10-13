@@ -41,5 +41,5 @@ Thumbs.db
 # Generated audit scratch files
 /reports/phase1/**/records.csv
 /reports/phase2/pilot/
-/reports/phase5/**/input.fna
-/reports/phase5/**/input.fna.gz
+/reports/**/input.fna
+/reports/**/input.fna.gz
